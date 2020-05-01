@@ -23,7 +23,7 @@ if ( $db_connection->connect_error ) {
 
 }
 
-$result = $db_connection->query( "SELECT * FROM ` Item ` WHERE `barcode` = 'L-DIN-AR01'" );
+$result = $db_connection->query( " SELECT * FROM `Item` WHERE `barcode`='L-DIN-AR01' " );
 if  ($result) { 
 
         foreach($result as $row) {
