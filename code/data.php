@@ -23,7 +23,7 @@ if ( $db_connection->connect_error ) {
 
 }
 
-$result = $db_connection->query( " SELECT * FROM `Item` WHERE `barcode`='L-DIN-AR01' " );
+$result = $db_connection->query( " SELECT * FROM `Item` WHERE `barcode`='".$barcode_value."' " );
 if  ($result) { 
 
         foreach($result as $row) {
@@ -31,6 +31,7 @@ if  ($result) {
                 $item = new stdClass();
                 $item->name = $row["name"];
                 $item->barcode = $row["barcode"];
+                $item->img_url = $row["img_url"];
                 $productObj->productList[] = $item;
 
         }
@@ -41,6 +42,7 @@ if  ($result) {
 $productJSON = json_encode($productObj);
 
 // return JSON
+header('Content-Type: application/json');
 echo $productJSON;
 
 
