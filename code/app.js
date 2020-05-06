@@ -23,6 +23,7 @@ var app = {
         let item = app.productList[0];
         $(".card-title>a".html(item.name);
         // update the list
+        
         // for each element, get both the object (element) and its index (idx) in the list
         // create a different data-id attribute for each plus button
         app.productList.forEach((element, idx) => {
