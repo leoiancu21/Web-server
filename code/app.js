@@ -17,9 +17,8 @@ var app = {
         console.log(jsonData);
         // save data in a local variable
         app.productList = jsonData.productList;
-
         let item = app.productList[0];
-        $(".card-title>a".html(item.name);
+        $(".card-title>a").html(item.name);
     },
     onError: function (e) {
         console.log("error!");
