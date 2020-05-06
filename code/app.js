@@ -15,25 +15,11 @@ var app = {
     },
     onSuccess: function (jsonData) {
         console.log(jsonData);
-        // Delete the current table
-        $("#table-body").html("");
         // save data in a local variable
         app.productList = jsonData.productList;
 
         let item = app.productList[0];
         $(".card-title>a".html(item.name);
-        // update the list
-        
-        // for each element, get both the object (element) and its index (idx) in the list
-        // create a different data-id attribute for each plus button
-        app.productList.forEach((element, idx) => {
-            let productRow = `<div class="table-row">
-            <div class="table-cell">${element.product}</div>
-            <div class="table-cell">${element.price} euro</div>
-            </div>`;
-            $("#table-body").append(productRow);
-            console.log(productRow);
-        });
     },
     onError: function (e) {
         console.log("error!");
