@@ -8,8 +8,6 @@ var app = {
         app.getProductList();
     },
     getProductList: function() {
-        let query_string = window.location.search; 
-        console.log(query_string);
         // make a HTTP GET request
         $.getJSON(`${app.baseURL}`)
         .done(app.onSuccess)
